@@ -18,7 +18,7 @@ export default class SeleniumServices {
   async initialize() {
     try {
       await this.initDriver(Browser.CHROME);
-      await this.getSiteByUrl('https://willtiptop.com/nails/');
+      await this.getSiteByUrl('https://willtiptop.com');
       await this.scrollToBottom();
       const images = await this.driver.findElements(By.tagName('img'));
       return await Promise.all([...images].map(image => image.getAttribute('src')));
